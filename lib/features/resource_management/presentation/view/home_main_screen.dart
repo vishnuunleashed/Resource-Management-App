@@ -1,3 +1,4 @@
+import 'package:resourcemanagementapp/features/base/presentation/utility/base_snackbar.dart';
 import 'package:resourcemanagementapp/features/resource_management/presentation/provider/auth_provider.dart';
 import 'package:resourcemanagementapp/features/resource_management/presentation/view/resource/resource_list_tab.dart';
 import 'package:resourcemanagementapp/features/resource_management/presentation/view/resource/resource_detail_screen.dart' show activeTabProvider;
@@ -61,12 +62,7 @@ class HomeMainScreen extends ConsumerWidget {
               backgroundColor: Theme.of(context).primaryColor,
               foregroundColor: Colors.white,
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Mock Action: Create New Resource triggered!"),
-                    behavior: SnackBarBehavior.floating,
-                  ),
-                );
+                BaseSnackBar().show(message: "This feature is yet to come!");
               },
               icon: const Icon(Icons.person_add_rounded),
               label: const Text("Create Resource"),
@@ -76,12 +72,8 @@ class HomeMainScreen extends ConsumerWidget {
                   backgroundColor: Theme.of(context).primaryColor,
                   foregroundColor: Colors.white,
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text("Mock Action: Create New Project triggered!"),
-                        behavior: SnackBarBehavior.floating,
-                      ),
-                    );
+                    BaseSnackBar().show(message: 'This feature is yet to come');
+
                   },
                   icon: const Icon(Icons.add_task_rounded),
                   label: const Text("Create Project"),

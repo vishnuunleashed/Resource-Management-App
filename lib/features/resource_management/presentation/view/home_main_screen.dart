@@ -56,6 +56,37 @@ class HomeMainScreen extends ConsumerWidget {
         index: activeTab,
         children: tabs,
       ),
+      floatingActionButton: activeTab == 0
+          ? FloatingActionButton.extended(
+              backgroundColor: Theme.of(context).primaryColor,
+              foregroundColor: Colors.white,
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Mock Action: Create New Resource triggered!"),
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
+              },
+              icon: const Icon(Icons.person_add_rounded),
+              label: const Text("Create Resource"),
+            )
+          : activeTab == 1
+              ? FloatingActionButton.extended(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  foregroundColor: Colors.white,
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text("Mock Action: Create New Project triggered!"),
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.add_task_rounded),
+                  label: const Text("Create Project"),
+                )
+              : null,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: activeTab,
         onTap: (index) {
